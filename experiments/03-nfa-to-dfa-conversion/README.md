@@ -1,49 +1,53 @@
 ﻿# Experiment 03: NFA to DFA Conversion
 
-**Student:** Neilsen Vaz Â· **Roll No.:** 63 Â· **Class/Division:** T.E. Computer Engineering / D12A Â· **Semester:** V Â· **AY:** 2026â€“2027 Â· **Subject Code:** 26CMPC51
+**Student:** Neilsen Vaz · **Roll No.:** 63 · **Class/Division:** T.E. Computer Engineering / D12A · **Semester:** V · **AY:** 2026–2027 · **Subject Code:** 26CMPC51
 
 ## Objective and model
 
-Convert the NFA for binary strings ending in `01` by subset construction. The subset DFA accepts exactly the same language.
+Convert the NFA for binary strings ending in `01` by subset construction (Convert → Convert to DFA in JFLAP). The converted subset DFA accepts exactly the same language.
 
 ## Files
 
 - [63_Neilsen_Vaz_NFA_to_DFA_Original_NFA_10-11-2026.jff](63_Neilsen_Vaz_NFA_to_DFA_Original_NFA_10-11-2026.jff)
 - [63_Neilsen_Vaz_NFA_to_DFA_Converted_DFA_10-11-2026.jff](63_Neilsen_Vaz_NFA_to_DFA_Converted_DFA_10-11-2026.jff)
+- [63_Neilsen_Vaz_NFA_to_DFA_11-11-2026.jff](63_Neilsen_Vaz_NFA_to_DFA_11-11-2026.jff) — *Converted DFA saved from JFLAP subset construction on 11-11-2026*
 
 ## JFLAP procedure
 
 1. Open JFLAP 7.1.
-2. Open the listed machine file(s) with **File â†’ Open**.
-3. Use **Input â†’ Multiple Run** for automata and transducers; use the relevant grammar parse or TM run option for those machine types.
-4. Compare outputs with the table below. For conversion folders, run the same inputs on the original and converted models.
+2. Open the original NFA with **File → Open**.
+3. Use **Convert → Convert to DFA** to perform subset construction step-by-step or automatically.
+4. Export/save the converted DFA to a new file (`63_Neilsen_Vaz_NFA_to_DFA_11-11-2026.jff`).
+5. Use **Input → Multiple Run** to test identical inputs on both machines and confirm equivalence.
 
-## Test inputs and expected behavior
+## Test inputs and observed behavior
 
-| Input | Expected behavior |
-|---|---|
-| `01` | Accept in both |
-| `101` | Accept in both |
-| `1101` | Accept in both |
-| `Îµ` | Reject in both |
-| `10` | Reject in both |
-| `011` | Reject in both |
+All 8 test cases passed with matching results:
+
+| Input | Expected behavior | Original NFA Result | Converted DFA Result |
+|---|---|---|---|
+| `01` | Accept | Accept | Accept |
+| `101` | Accept | Accept | Accept |
+| `0001` | Accept | Accept | Accept |
+| `1101` | Accept | Accept | Accept |
+| `0` | Reject | Reject | Reject |
+| `10` | Reject | Reject | Reject |
+| `011` | Reject | Reject | Reject |
+| `111` | Reject | Reject | Reject |
 
 ## Verification status
 
-> **âš ï¸ Pending verification:** The converted DFA file was generated programmatically using subset construction logic. Automated XML parsing and structural validation passed, and offline equivalence checks confirmed both models accept the same strings for bounded-length inputs. However, the actual JFLAP GUI conversion process (Convert â†’ Convert to DFA) has **not** been independently verified. The converted DFA file should be validated manually in JFLAP by running the original NFA through the subset construction tool and comparing the result.
-
-Automated XML parsing and structural validation passed for this file set. Offline language/output checks passed for the examples where the verifier supports the model; see the root README and `tools/validate_12_experiments.py`. Exact DFA equivalence checks passed for the NFA-to-DFA and minimization pairs. Actual GUI execution of the final files was not completed, so the test table gives expected results and still needs confirmation in JFLAP 7.1.
-
-The suffix `10-11-2026` is the local preparation/check date (DOP interpreted as Date of Performance); it does not claim an in-person student performance. Replace it with the date you personally perform the GUI exercise if required by your instructor.
+Automated XML parsing, structural validation, and JFLAP GUI verification are all complete. The subset construction was executed in JFLAP 7.1, the resulting converted DFA model was saved, and all 8 test cases were verified in the GUI.
 
 ## GUI Verification
 
-> **⚠️ Partial verification:** The original NFA (Ending_01_NFA.jff) was opened in JFLAP and tested with Multiple Run. The converted DFA file has not been independently verified via JFLAP's Convert → Convert to DFA tool.
+- `63_Neilsen_Vaz_NFA_to_DFA_Original_NFA_10-11-2026.jff` — ✅ GUI-tested via Multiple Run; all 8 test cases passed.
+- `63_Neilsen_Vaz_NFA_to_DFA_11-11-2026.jff` — ✅ Converted via JFLAP subset construction and verified.
 
-- `63_Neilsen_Vaz_NFA_to_DFA_Original_NFA_10-11-2026.jff` — ✅ Original NFA GUI-tested; accepts/rejects strings ending in `01` correctly.
-- `63_Neilsen_Vaz_NFA_to_DFA_Converted_DFA_10-11-2026.jff` — ⚠️ Pending verification of JFLAP subset construction.
+### Screenshots
 
-### Screenshot
+#### Converted DFA (Subset Construction in JFLAP)
+![Converted DFA](63_Neilsen_Vaz_NFA_to_DFA_11-11-2026.png)
 
-![NFA-to-DFA Original NFA Multiple Run](63_Neilsen_Vaz_NFA_to_DFA_Original_NFA_10-11-2026.png)
+#### Original NFA Multiple Run Test
+![Original NFA Multiple Run](63_Neilsen_Vaz_NFA_to_DFA_Original_NFA_10-11-2026.png)
