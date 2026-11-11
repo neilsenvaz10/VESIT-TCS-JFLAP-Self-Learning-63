@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<structure><type>grammar</type><production><left>S</left><right>aA</right></production><production><left>S</left><right>bS</right></production><production><left>A</left><right>aA</right></production><production><left>A</left><right>bF</right></production><production><left>F</left><right>aA</right></production><production><left>F</left><right>bS</right></production><production><left>F</left></production></structure>
