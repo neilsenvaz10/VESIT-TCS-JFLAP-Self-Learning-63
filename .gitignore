@@ -1,0 +1,19 @@
+# Java binaries and JFLAP jar
+*.jar
+*.class
+
+# Build and cache
+__pycache__/
+*.pyc
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Archives and temp files
+*.zip
+*.tar.gz
+*.7z
+*.tmp
+*.bak
